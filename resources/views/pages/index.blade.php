@@ -1,5 +1,6 @@
 
-@extends('layout/master')
+@extends('../pages/layout/master')
+
 @section('content')
     <!-- سلايدر -->
     <section class="mb-2">

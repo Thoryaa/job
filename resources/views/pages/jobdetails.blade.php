@@ -1,4 +1,5 @@
-@extends('layout/master')
+@extends('../pages/layout/master')
+
 @section('content')
 <!-- تفاصيل الوظيفه -->
 <div class="container mt-5">
