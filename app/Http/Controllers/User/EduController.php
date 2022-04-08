@@ -9,9 +9,9 @@ class EduController extends Controller
 {
     //
     public function Addedu(){
-        return view('users.layout.addedu');
+        return view('users.education.addedu');
     }
     public function ListAlledu(){
-        return view('users.layout.listedu');
+        return view('users.education.listedu');
     }
 }

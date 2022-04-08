@@ -1,6 +1,11 @@
 <?php
 
 use App\Http\Controllers\Home\HomeController;
+use App\Http\Controllers\User\CourseController;
+use App\Http\Controllers\User\EduController;
+use App\Http\Controllers\User\ExperinceController;
+use App\Http\Controllers\User\personalController;
+use App\Http\Controllers\User\SkillController;
 use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,20 +21,20 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/userdash',[UserController::class,'Udash'])->name('userdash');
 //skills
-Route::get('/addskills',[UserController::class,'Addcourse'])->name('addSkills');
-Route::get('/listkills',[UserController::class,'ListAllCourse'])->name('listAllSkills');
+Route::get('/addskills',[SkillController::class,'Addskills'])->name('addSkills');
+Route::get('/listkills',[SkillController::class,'ListAllSkills'])->name('listAllSkills');
 //course
-Route::get('/addcourse',[UserController::class,'Udash'])->name('addCourse');
-Route::get('/listcourse',[UserController::class,'Udash'])->name('listAllCourse');
+Route::get('/addcourse',[CourseController::class,'Addcourse'])->name('addCourse');
+Route::get('/listcourse',[CourseController::class,'ListAllCourse'])->name('listAllCourse');
 //edu
-Route::get('/addedu',[UserController::class,'Addedu'])->name('addEdu');
-Route::get('/listedu',[UserController::class,'ListAlledu'])->name('listAllEdu');
+Route::get('/addedu',[EduController::class,'Addedu'])->name('addEdu');
+Route::get('/listedu',[EduController::class,'ListAlledu'])->name('listAllEdu');
 //experince
-Route::get('/addexperince',[UserController::class,'Addexp'])->name('addExp');
-Route::get('/listexperince',[UserController::class,'ListAllexp'])->name('listAllExp');
+Route::get('/addexperince',[ExperinceController::class,'Addexp'])->name('addExp');
+Route::get('/listexperince',[ExperinceController::class,'ListAllexp'])->name('listAllExp');
 //personal
-Route::get('/addpersonalinfo',[UserController::class,'Addpersonalinfo'])->name('AddPersonal');
-Route::get('/listpersonalinfo',[UserController::class,'ListAllpersonalinfo'])->name('listAllPersonal');
+Route::get('/addpersonalinfo',[personalController::class,'Addpersonalinfo'])->name('AddPersonal');
+Route::get('/listpersonalinfo',[personalController::class,'ListAllpersonalinfo'])->name('listAllPersonal');
 
 
  
