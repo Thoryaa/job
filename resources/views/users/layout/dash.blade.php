@@ -263,7 +263,7 @@
           </a>
         </li>
         <li class="menu-item">
-          <a href="{{ route('addCourse') }}" class="menu-link">
+          <a href="{{ route('Addcourse') }}" class="menu-link">
             <div data-i18n="Add course">Add course</div>
           </a>
         </li>

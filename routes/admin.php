@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\CompanyController;
+use App\Http\Controllers\Admin\jobController;
+use App\Http\Controllers\Admin\RooleController;
+use App\Http\Controllers\Admin\UController;
 use App\Http\Controllers\Home\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,19 +18,39 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
- 
+ /*
+ Route::group(
+[
+	'prefix' => LaravelLocalization::setLocale(),
+	'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+],
+function()
+{
+	Route::get('/', function()
+	{
+		return View::make('hello');
+	});
+
+	Route::get('test',function(){
+		return View::make('test');
+	});
+});
+ */
  
 //company 
-Route::get('/AddCompany',[company::class,'AddCompany'])->name('addcompany');
-Route::get('/ShowCompany',[Company::class,'ShowCompany'])->name('listcompany'); 
-Route::get('/SaveCompany',[Company::class,'CreateCompany'])->name('save_companyInfo'); 
+Route::get('/AddCompany',[CompanyController::class,'AddCompany'])->name('addcompany');
+Route::get('/ShowCompany',[CompanyController::class,'ShowCompany'])->name('listcompany'); 
+Route::get('/SaveCompany',[CompanyController::class,'CreateCompany'])->name('save_companyInfo'); 
 
 //job
-Route::get('/AddJobs',[job::class,'AddJob'])->name('addjob');
-Route::get('/ShowJobs',[job::class,'ShowJobs'])->name('listjob'); 
+Route::get('/AddJobs',[jobController::class,'AddJob'])->name('addjob');
+Route::get('/ShowJobs',[jobController::class,'ShowJobs'])->name('listjob'); 
 //users
-Route::get('/ListUser',[Users::class,'ShowUser'])->name('listuser');
+Route::get('/ListUser',[UController::class,'ShowUser'])->name('listuser');
+Route::get('/AddUser',[UController::class,'AddUser'])->name('adduser');
+Route::get('/saveUser',[UController::class,'aUser'])->name('saveuser');
+
 //Role
-Route::get('/AddRole',[Role::class,'AddRole'])->name('addRole');
-Route::get('/ShowRole',[Role::class,'ShowRoles'])->name('listRole'); 
-Route::post('/sRole',[Role::class,'sRole'])->name('sRole');
+Route::get('/AddRole',[RooleController::class,'AddRole'])->name('addRole');
+Route::get('/ShowRole',[RooleController::class,'ShowRoles'])->name('listRole'); 
+Route::post('/sRole',[RooleController::class,'sRole'])->name('sRole');

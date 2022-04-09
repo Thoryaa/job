@@ -14,36 +14,21 @@
   <form class="card-body" action="/save_user" method="POST">
     <h6>1. Account Details</h6>
     <div class="row g-3">
-      <div class="col-md-6">
-        <label class="form-label" for="multicol-username">Username</label>
-        <input name="name" type="text" id="multicol-username" class="form-control" placeholder="john.doe" />
-      </div>
+  
        <div class="col-md-6">
-        <label class="form-label" for="multicol-username">اسم الجهه</label>
-        <input name="name" type="text" id="multicol-username" class="form-control" placeholder="john.doe" />
+        <label class="form-label" for="multicol-username">المهارة</label>
+        <input name="skill_name" type="text" id="multicol-username" class="form-control" placeholder="john.doe" />
       </div>
      <div class="col-md-6">
-        <label class="form-label" for="multicol-username">تاريخ النشر</label>
-        <input name="name" type="date" id="multicol-username" class="form-control"  />
-      </div>
-     <div class="col-md-6">
-        <label class="form-label" for="multicol-username">اخر موعد للتقديم</label>
-        <input name="name" type='date' id="multicol-username" class="form-control"  />
-      </div>
-       <div class="col-md-6">
-        <label class="form-label" for="multicol-username">التفاصيل</label>
-        <input name="name" type="text" id="multicol-username" class="form-control" placeholder="john.doe" />
-      </div>
-     <div class="col-md-6">
-        <label class="form-label" for="multicol-username">عدد ساعات العمل</label>
-        <input name="name" type="number" id="multicol-username" class="form-control"  />
+        <label class="form-label" for="multicol-username">النسبة</label>
+        <input name="percent" type="number"  class="form-control"  />
       </div>
     
     
     
       <div class="col-md-6">
         <div class="form-password-toggle">
-          <label class="form-label" for="multicol-confirm-password">job activation</label>
+          <label class="form-label" for="multicol-confirm-password">skills activation</label>
           <div class="input-group input-group-merge">
           <label class="switch">
               <input name="is_active" value=1 type="checkbox" checked class="switch-input" />

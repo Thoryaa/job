@@ -9,10 +9,10 @@ class CourseController extends Controller
 {
     //
     public function Addcourse(){
-        return view('users.layout.addcourse');
+        return view('users.course.addcourse');
     }
     public function ListAllCourse(){
-        return view('users.layout.listcourse');
+        return view('users.course.listcourse');
     }
    
 }

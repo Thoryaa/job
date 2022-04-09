@@ -10,9 +10,9 @@ class SkillController extends Controller
     //
     
     public function Addskills(){
-        return view('users.layout.addskills');
+        return view('users.skills.addskills');
     }
     public function ListAllSkills(){
-        return view('users.layout.listskills');
+        return view('users.skills.listskills');
     }
 }

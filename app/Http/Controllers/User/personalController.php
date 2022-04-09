@@ -9,10 +9,10 @@ class personalController extends Controller
 {
     //
     public function Addpersonalinfo(){
-        return view('users.layout.addpersonalinfo');
+        return view('users.personalinfo.addpersonalinfo');
     }
     public function ListAllpersonalinfo(){
-        return view('users.layout.listpersonalinfo');
+        return view('users.personalinfo.listpersonalinfo');
     }
     
 }

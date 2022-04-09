@@ -195,6 +195,11 @@
         <div data-i18n="user">user</div>
       </a>
       <ul class="menu-sub">
+            <li class="menu-item">
+          <a href="{{ route('adduser') }}" class="menu-link">
+            <div data-i18n="add_user">add user</div>
+          </a>
+        </li>
         <li class="menu-item">
           <a href="{{ route('listuser') }}" class="menu-link">
             <div data-i18n="List_user">list user</div>

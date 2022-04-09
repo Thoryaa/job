@@ -9,9 +9,9 @@ class ExperinceController extends Controller
 {
     //
     public function Addexp(){
-        return view('users.layout.addexperince');
+        return view('users.experince.addexperince');
     }
     public function ListAllexp(){
-        return view('users.layout.listaddexperince');
+        return view('users.experince.listexperince');
     }
 }
