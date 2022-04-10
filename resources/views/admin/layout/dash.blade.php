@@ -232,17 +232,17 @@
     <li class="menu-item">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class='menu-icon tf-icons bx bx-food-menu'></i>
-        <div data-i18n="company">company</div>
+        <div data-i18n="service">service</div>
       </a>
       <ul class="menu-sub">
         <li class="menu-item">
-          <a href="{{ route('listcompany') }}" class="menu-link">
-            <div data-i18n="List_companies">list company</div>
+          <a href="{{ route('add_service') }}" class="menu-link">
+            <div data-i18n="add service">add service</div>
           </a>
         </li>
         <li class="menu-item">
-          <a href="{{ route('addcompany') }}" class="menu-link">
-            <div data-i18n="Add company">Add companies</div>
+          <a href="{{ route('list') }}" class="menu-link">
+            <div data-i18n="list service">list service</div>
           </a>
         </li>
         

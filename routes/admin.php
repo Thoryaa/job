@@ -5,6 +5,8 @@ use App\Http\Controllers\Admin\jobController;
 use App\Http\Controllers\Admin\RooleController;
 use App\Http\Controllers\Admin\UController;
 use App\Http\Controllers\Home\HomeController;
+use App\Http\Controllers\Admin\ServicesContainer;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -54,3 +56,10 @@ Route::get('/saveUser',[UController::class,'aUser'])->name('saveuser');
 Route::get('/AddRole',[RooleController::class,'AddRole'])->name('addRole');
 Route::get('/ShowRole',[RooleController::class,'ShowRoles'])->name('listRole'); 
 Route::post('/sRole',[RooleController::class,'sRole'])->name('sRole');
+//services_
+Route::get('/add_service', [ServicesContainer::class,'create'])->name('add_service');
+Route::get('/edit_service/{ser_id}',[ServicesContainer::class,'edit'])->name('edit_services');
+Route::get('/toggle_service/{ser_id}',[ServicesContainer::class,'toggle'])->name('toggle_services');
+Route::post('/save_service',[ServicesContainer::class,'store'])->name('save_services');
+Route::post('/update_service/{ser_id}',[ServicesContainer::class,'update'])->name('update_services');
+Route::get('/list_service',[ServicesContainer::class,'index'])->name('list');
