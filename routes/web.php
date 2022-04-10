@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Home\HomeController;
+use App\Http\Controllers\Admin\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,29 +13,19 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//Home
-Route::get('/',[HomeController::class,'showHome'])->name('home');
-//login
-Route::get('/login',[HomeController::class,'showlogin'])->name('log');
-//signup
-Route::get('/signup',[HomeController::class,'showsignup'])->name('sign');
-//services
-Route::get('/service',[HomeController::class,'showservice'])->name('service');
-//profile
-Route::get('/profile',[HomeController::class,'showprofile'])->name('profile');
-//job
-Route::get('/job',[HomeController::class,'showjobs'])->name('job');
-//job details
-Route::get('/jobdetails',[HomeController::class,'showjobdetails'])->name('jobdetails');
-//companies
-Route::get('/comp',[HomeController::class,'showcompanies'])->name('comp');
-//concat
-Route::get('/contact',[HomeController::class,'showcontact'])->name('contact');
-//about
-Route::get('/about',[HomeController::class,'showabout'])->name('about');
-//account
-Route::get('/account',[HomeController::class,'showaccount'])->name('acount');
-//admin  dashboard 
-Route::get('/dash',[HomeController::class,'dash'])->name('dash'); 
-//user dashboard 
-Route::get('/dashboard',[HomeController::class,'showdashboard'])->name('dashboard');
+Route::prefix('admin')->group(function(){
+    Route::get('/login',[AdminController::class,'Index'])->name("login_from");
+    Route::get('/login/owner',[AdminController::class,'Login'])->name("amin.login");
+    Route::get('/dashboard',[AdminController::class,'Dashboard'])->name("admin.dashboard");
+
+});
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
