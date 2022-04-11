@@ -6,7 +6,6 @@ use App\Http\Controllers\Admin\RooleController;
 use App\Http\Controllers\Admin\UController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Admin\ServicesContainer;
-
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -63,3 +62,4 @@ Route::get('/toggle_service/{ser_id}',[ServicesContainer::class,'toggle'])->name
 Route::post('/save_service',[ServicesContainer::class,'store'])->name('save_services');
 Route::post('/update_service/{ser_id}',[ServicesContainer::class,'update'])->name('update_services');
 Route::get('/list_service',[ServicesContainer::class,'index'])->name('list');
+

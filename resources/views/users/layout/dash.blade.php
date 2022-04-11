@@ -277,12 +277,12 @@
       </a>
       <ul class="menu-sub">
         <li class="menu-item">
-          <a href="{{ route('listAllSkills') }}" class="menu-link">
+          <a href="{{ route('list_skills') }}" class="menu-link">
             <div data-i18n="List_skills">list skills</div>
           </a>
         </li>
         <li class="menu-item">
-          <a href="{{ route('addSkills') }}" class="menu-link">
+          <a href="{{ route('add_skills') }}" class="menu-link">
             <div data-i18n="Add skills">add skills</div>
           </a>
         </li>

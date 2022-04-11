@@ -1,12 +1,13 @@
 <?php
 
-use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\User\CourseController;
 use App\Http\Controllers\User\EduController;
 use App\Http\Controllers\User\ExperinceController;
 use App\Http\Controllers\User\personalController;
-use App\Http\Controllers\User\SkillController;
 use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\Home\SkillControllers;
+
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,8 +22,6 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/userdash',[UserController::class,'Udash'])->name('userdash');
 //skills
-Route::get('/addskills',[SkillController::class,'Addskills'])->name('addSkills');
-Route::get('/listkills',[SkillController::class,'ListAllSkills'])->name('listAllSkills');
 //course
 Route::get('/addcourse',[CourseController::class,'Addcourse'])->name('Addcourse');
 Route::get('/listcourse',[CourseController::class,'ListAllCourse'])->name('listAllCourse');
@@ -39,3 +38,10 @@ Route::get('/listpersonalinfo',[personalController::class,'ListAllpersonalinfo']
 
  
  
+//skills
+Route::get('/add_skills', [SkillControllers::class,'create'])->name('add_skills');
+Route::get('/edit_skills/{ser_id}',[SkillControllers::class,'edit'])->name('edit_skills');
+Route::get('/toggle_skills/{ser_id}',[SkillControllers::class,'toggle'])->name('toggle_skills');
+Route::post('/save_skills',[SkillControllers::class,'store'])->name('save_skills');
+Route::post('/update_skills/{ser_id}',[SkillControllers::class,'update'])->name('update_skills');
+Route::get('/list_skills',[SkillControllers::class,'index'])->name('list_skills');

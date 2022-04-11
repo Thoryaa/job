@@ -16,34 +16,26 @@
           <tr>
             <th>#</th>
             <th>id</th>
-            <th>اسم الخدمة</th>
-                        <th>الوصف</th>
+            <th>المهارة</th>
 
-            <th>الصورة</th>
+            <th>hgksfm</th>
             <th>الحالة</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody class="table-border-bottom-0">
          
-         @foreach ($services as $services)
+         @foreach ($skills as $skills)
 
          <tr>
            <td>{{ $loop->iteration }}</td>
-          <td>{{ $services->id }}</td>
-          <td>{{ $services->ser_name }}</td>
-          <td>{{ $services->desc }}</td>
-          <td>
-            <ul class="list-unstyled servicess-list m-0 avatar-group d-flex align-items-center">
-              
-              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="Christina Parker">
-                <img src="{{ $services->image }}" alt="Avatar" class="rounded-circle">
-              </li>
-            </ul>
-          </td>
+          <td>{{ $skills->id }}</td>
+          <td>{{ $skills->skills_name }}</td>
+          <td>{{ $skills->percent }}</td>
+      
          
           <td>
-            @if($services->is_active==1)  
+            @if($skills->is_active==1)  
             <span class="badge bg-label-success me-1">مفعل</span>
         
             @else
@@ -56,8 +48,8 @@
             <div class="dropdown">
               <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="{{ route('edit_services',$services->id) }}"><i class="bx bx-edit-alt me-2"></i> Edit</a>
-                <a class="dropdown-item" href="{{ route('toggle_services',$services->id) }}"><i class="bx bx-trash me-2"></i> @if($services->is_active==1)disable @else enable @endif</a>
+                <a class="dropdown-item" href="{{ route('edit_skills',$skills->id) }}"><i class="bx bx-edit-alt me-2"></i> Edit</a>
+                <a class="dropdown-item" href="{{ route('toggle_skills',$skills->id) }}"><i class="bx bx-trash me-2"></i> @if($skills->is_active==1)disable @else enable @endif</a>
               </div>
             </div>
           </td>

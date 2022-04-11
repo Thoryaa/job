@@ -18,23 +18,23 @@
           @endif
           
           
-          <form method="POST" action="{{ route('save_services') }}" enctype="multipart/form-data">
+          <form method="POST" action="{{ route('save_skills') }}" enctype="multipart/form-data">
             @csrf
 
             <div class="row g-3">
             <div class="col-md-6">
               <div class="row">
-                <label class="col-sm-3 col-form-label text-sm-end" for="formtabs-first-name"> اسم الخدمة</label>
+                <label class="col-sm-3 col-form-label text-sm-end" for="formtabs-first-name"> المهارة</label>
                 <div class="col-sm-9">
-                  <input type="text" name="ser_name" id="formtabs-first-name" class="form-control" placeholder="John" />
+                  <input type="text" name="skills_name" id="formtabs-first-name" class="form-control" placeholder="John" />
                 </div>
               </div>
             </div>
             <div class="col-md-6">
               <div class="row">
-                <label class="col-sm-3 col-form-label text-sm-end" for="formtabs-last-name"> الوصف</label>
+                <label class="col-sm-3 col-form-label text-sm-end" for="formtabs-last-name"> النسبة</label>
                 <div class="col-sm-9">
-                  <input type="text" name="desc" id="formtabs-last-name" class="form-control" placeholder="Doe" />
+                  <input type="number" name="percent" id="formtabs-last-name" class="form-control" placeholder="Doe" />
                 </div>
               </div>
             </div>
@@ -51,14 +51,7 @@
               </div>
             </div>
             
-            <div class="col-md-6">
-              <div class="row">
-                <label class="col-sm-3 col-form-label text-sm-end" for="formtabs-birthdate">الصورة</label>
-                <div class="col-sm-9">
-                  <input type="file" name="image" id="formtabs-birthdate" class="form-control dob-picker" />
-                </div>
-              </div>
-            </div>
+          
            
           </div>
 
