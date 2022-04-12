@@ -13,7 +13,7 @@
                     <li class="nav-item px-3"><a href="{{ route('service') }}" class="nav-link">Services</a></li>
                     <li class="nav-item px-3"><a href="{{ route('comp') }}" class="nav-link">Companies</a></li>
                     <li class="nav-item px-3"><a href="{{ route('acount') }}" class="nav-link">Acounts</a></li>
-                    <a href="{{ route('sign') }}" class="btn" style="border: 1px solid #f4931e;">Sign up</a>
+                    <a href="{{ route('register') }}" class="btn" style="border: 1px solid #f4931e;">Sign up</a>
                     <a href="{{ route('log') }}" class="btn " style=" background:#f4931e;border: 1px solid #f4931e;">Log
                         in</a>
 

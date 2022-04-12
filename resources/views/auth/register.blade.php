@@ -1,59 +1,81 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+@extends('../pages/layout/master')
 
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
+@section('content')
+    <!--  -->
+    <section id="hero" class="bg-light text-dark text-center text-sm-start  py-5">
+        <div class="container">
+            <div class="d-sm-flex align-items-center justify-content-center">
 
-            <!-- Name -->
-            <div>
-                <x-label for="name" :value="__('Name')" />
+                <img src="{{ URL::asset('assest/images/undraw_mobile_login_re_9ntv.svg"') }}" alt="" class="d-none d-sm-block img-fluid w-50">
+  <form class="row g-3" method="POST" action="{{ route('register') }}">
+                       @csrf
+                    <div class="col-md-12">
+                        <h5>Create a Free Account</h5>
+                        <label for="validationDefaultUsername" class="form-label  fw-bold" {{ __('Name') }}>Username</label>
+                        <div class="input-group">
+                            <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                            <input  id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}"  id="validationDefaultUsername"
+                                aria-describedby="inputGroupPrepend2"  required>
 
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+                                 @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                        </div>
+                    </div>
+                    
+                        <div class="col-md-12">
+                            <label for="email" class="col-md-4 col-form-label fw-bold text-md-start">{{ __('Email Address') }}</label>
+
+                            <div class="col-md-12">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                                      <div class="col-md-12">
+                            <label for="password" class="col-md-4 col-form-label fw-bold text-md-start">{{ __('Password') }}</label>
+
+                            <div class="col-md-12">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <label for="password-confirm" class="col-md-4 col-form-label fw-bold text-md-start">{{ __('Confirm Password') }}</label>
+
+                            <div class="col-md-12">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            </div>
+                        </div>
+
+                     
+             
+
+
+                    <div class="col-12">
+                        <button class="btn btn-primary w-100" type="submit"
+                            style=" background:#f4931e;border: 1px solid #f4931e;">Sign Up                                     {{ __('Register') }}
+</button>
+                        <p>Already have an account?<a href="{{ route('log') }}">Log in</a></p>
+                    </div>
+                </form>
+      </div>
+              
             </div>
+        </div>
+    </section>
 
-            <!-- Email Address -->
-            <div class="mt-4">
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
-            </div>
-
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
-
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-button class="ml-4">
-                    {{ __('Register') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+@endsection

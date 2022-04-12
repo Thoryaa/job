@@ -40,7 +40,7 @@ class SkillControllers extends Controller
     }
     public function store(Request $request){
         Validator::validate($request->all(),[
-            'skills_name'=>['required','min:5','max:20'],
+            'skills_name'=>['required','min:1','max:20'],
             //'desc'=>['required','min:5','max:60']
 
 

@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 
 
@@ -683,7 +685,9 @@
                       </div>
                     </div>
                     <div class="flex-grow-1">
-                      <span class="fw-semibold d-block">John Doe</span>
+                      <span class="fw-semibold d-block">  
+                                    {{ Auth::user()->name }}
+                                </span>
                       <small class="text-muted">Admin</small>
                     </div>
                   </div>
@@ -738,10 +742,11 @@
                 <div class="dropdown-divider"></div>
               </li>
               <li>
-                <a class="dropdown-item" href="auth-login-cover.html" target="_blank">
-                  <i class="bx bx-power-off me-2"></i>
-                  <span class="align-middle">Log Out</span>
-                </a>
+                  <a class="" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
               </li>
             </ul>
           </li>

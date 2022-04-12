@@ -1,6 +1,12 @@
 <?php
-
+use App\Http\Controllers\User\CourseController;
+use App\Http\Controllers\User\EduController;
+use App\Http\Controllers\User\ExperinceController;
+use App\Http\Controllers\User\personalController;
+use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\Home\SkillControllers;
 use App\Http\Controllers\Admin\AdminController;
+use Illuminate\Auth\Events\Verified;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,12 +26,12 @@ Route::prefix('admin')->group(function(){
 
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard',[UserController::class,'Udash'])->middleware(['auth'])->name('dashboard')->middleware('verified');
+
 
 require __DIR__.'/auth.php';
+
+Auth::routes(['verify'=>true]);
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
