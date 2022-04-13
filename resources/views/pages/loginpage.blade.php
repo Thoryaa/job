@@ -1,4 +1,5 @@
-@extends('layout/master')
+@extends('../pages/layout/master')
+
 @section('content')
     <!--  -->
     <section id="hero" class="bg-light text-dark text-center text-sm-start  py-5">

@@ -1,12 +1,15 @@
-@extends('layout/master')
+@extends('../pages/layout/master')
+
 @section('content')
     <!--  -->
     <section id="hero" class="bg-light text-dark text-center text-sm-start  py-5">
         <div class="container">
             <div class="d-sm-flex align-items-center justify-content-center">
-                <img src="{{ URL::asset('assest/images/undraw_mobile_login_re_9ntv.svg"') }}" alt="" class="d-none d-sm-block img-fluid w-50">
-                <form class="row g-3">
 
+                <img src="{{ URL::asset('assest/images/undraw_mobile_login_re_9ntv.svg"') }}" alt="" class="d-none d-sm-block img-fluid w-50">
+
+                <form class="row g-3" method='post' acttion='{{ route('admin.login') }}'>
+@csrf
                     <div class="col-md-12">
                         <h5>Create a Free Account</h5>
                         <label for="validationDefaultUsername" class="form-label fw-bold">Username or Email</label>

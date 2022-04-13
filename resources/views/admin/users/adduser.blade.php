@@ -3,49 +3,41 @@
      <div class="container-xxl flex-grow-1 container-p-y">
 
 
-<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Forms/</span> Vertical Layouts</h4>
 
 
 
 
 <!-- Multi Column with Form Separator -->
 <div class="card mb-4">
-  <h5 class="card-header">Multi Column with Form Separator</h5>
   <form class="card-body" action="/save_user" method="POST">
-    <h6>1. Account Details</h6>
+    <h6>create user</h6>
     <div class="row g-3">
       <div class="col-md-6">
         <label class="form-label" for="multicol-username">Username</label>
-        <input name="name" type="text" id="multicol-username" class="form-control" placeholder="john.doe" />
+        <input name="user_name" type="text"  class="form-control" placeholder="john.doe" />
       </div>
       <div class="col-md-6">
         <label class="form-label" for="multicol-email">Email</label>
         <div class="input-group input-group-merge">
-          <input  name="email"type="text" id="multicol-email" class="form-control" placeholder="john.doe" aria-label="john.doe" aria-describedby="multicol-email2" />
-          <span class="input-group-text" id="multicol-email2">@example.com</span>
+          <input  name="user_email"type="text"  class="form-control" placeholder="john.doe" aria-label="john.doe" aria-describedby="multicol-email2" />
+          <span class="input-group-text" >@example.com</span>
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-password-toggle">
           <label class="form-label" for="multicol-password">Password</label>
           <div class="input-group input-group-merge">
-            <input  name="password" type="password" id="multicol-password" class="form-control" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="multicol-password2" />
-            <span class="input-group-text cursor-pointer" id="multicol-password2"><i class="bx bx-hide"></i></span>
+            <input  name="user_password" type="password"  class="form-control" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="multicol-password2" />
+            <span class="input-group-text cursor-pointer" ><i class="bx bx-hide"></i></span>
           </div>
         </div>
       </div>
-      <div class="col-md-6">
+     <div class="col-md-6">
         <div class="form-password-toggle">
-          <label class="form-label" for="multicol-confirm-password">user activation</label>
+          <label class="form-label" for="multicol-password">confirm Password</label>
           <div class="input-group input-group-merge">
-          <label class="switch">
-              <input name="is_active" value=1 type="checkbox" checked class="switch-input" />
-              <span class="switch-toggle-slider">
-                <span class="switch-on"></span>
-                <span class="switch-off"></span>
-              </span>
-              <span class="switch-label">is active</span>
-            </label>
+            <input  name="confirm_password" type="password"  class="form-control" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="multicol-password2" />
+            <span class="input-group-text cursor-pointer" ><i class="bx bx-hide"></i></span>
           </div>
         </div>
       </div>
