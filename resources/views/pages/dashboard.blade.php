@@ -101,7 +101,7 @@
                             <h5 class="card-title">Ruqaiah Saif</h5>
 
                             <div class="card-body">
-                                <img src="../images/r.jpg" class="card-img-top rounded-pill" alt="...">
+                                <img src="{{ URL::asset('assest/images/r.jpg') }}" class="card-img-top rounded-pill" alt="...">
                                 <p class="card-text "><i class="bi bi-camera p-2"></i><small class="text-muted">change
                                         picture</small></p>
                             </div>
